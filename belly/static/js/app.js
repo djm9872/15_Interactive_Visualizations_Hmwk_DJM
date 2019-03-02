@@ -1,15 +1,15 @@
 function buildMetadata(sample) {
 
   // @TODO: Complete the following function that builds the metadata panel
-    // var url = `/metadata/${sample}`;
-    // d3.json(url).then(function(data) {
-    //   console.log(data)
-    //   d3.select('#sample-metadata').html("");
-    //   Object.defineProperties(data).forEach(([key, value]) => {
-    //     d3.select("#sample-metadata").append("li").text(`${key}: ${value}`)
-    //   })
+    var url = `/metadata/${sample}`;
+    d3.json(url).then(function(data) {
+      console.log(data)
+      d3.select('#sample-metadata').html("");
+      Object.entries(data).forEach(([key, value]) => {
+        d3.select("#sample-metadata").append("li").text(`${key}: ${value}`)
+      })
 
-    // });
+    });
   }
   // Use `d3.json` to fetch the metadata for a sample
     // Use d3 to select the panel with id of `#sample-metadata`
